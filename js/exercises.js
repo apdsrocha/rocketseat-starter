@@ -25,12 +25,10 @@ let createBox = function() {
     newBox.style.width = "100px";
     newBox.style.height = "100px";
     newBox.style.backgroundColor = "red";
-    console.log(newBox.style.backgroundColor)
     newBox.style.margin = "2%";
     newBox.onmouseover = function() {
         newBox.style.backgroundColor = getRandomColor();
     };
-    console.log(newBox.style.backgroundColor)
     boxResults.appendChild(newBox);
 }
 
@@ -47,3 +45,14 @@ function getRandomColor() {
     }
     return color;
    }
+
+
+
+/*3º exercício
+A partir do seguinte vetor:
+var nomes = ["Diego", "Gabriel", "Lucas"];
+Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+● Diego
+● Gabriel
+● Lucas*/
+
