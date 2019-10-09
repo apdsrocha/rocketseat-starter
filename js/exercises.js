@@ -56,3 +56,37 @@ Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
 ● Gabriel
 ● Lucas*/
 
+let nameList = document.querySelector('.name-list');
+let nomes = ["Diego", "Gabriel", "Lucas"];
+let newUl = document.createElement('ul');
+nomes.map(function(item) {
+    let newListItem = document.createElement('li');
+    newListItem.innerText = item;
+    newUl.appendChild(newListItem)
+})
+nameList.appendChild(newUl);
+
+/*4º exercício
+Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+<input type="text" name="nome">
+<button onClick="adicionar()">Adicionar</button>
+Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique */
+
+let newInput = document.createElement('input');
+newInput.type = 'text';
+newInput.name = 'nome';
+
+let newBtn = document.createElement('button');
+newBtn.innerText = 'Adicionar novos itens';
+newBtn.onclick = function() {
+    let inputValue = document.querySelector('input');
+    let createItem = document.createElement('li');
+    createItem.innerText = inputValue.value;
+    newUl.appendChild(createItem);
+    inputValue.value = '';
+}
+
+nameList.append(newInput);
+nameList.append(newBtn)
